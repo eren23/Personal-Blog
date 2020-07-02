@@ -7,9 +7,19 @@ const ContactPage = () => {
   return (
     <Layout>
       <Head title="Contact" />
-      <h1>Contact Page Title</h1>
-      <p>Contact Details Will be Here</p>
-      <a href="https://www.akbuluteren.com/" target="_blank" rel="noreferrer">
+      <h1>Contact</h1>
+      <p>Send me an email at: "erenak1996@gmail.com" or...</p>
+      <a
+        href="https://www.akbuluteren.com/"
+        target="_blank"
+        rel="noreferrer"
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "2rem",
+          fontStyle: "italic",
+        }}
+      >
         Go to my website
       </a>
     </Layout>
