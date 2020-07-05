@@ -1,6 +1,7 @@
 import React from "react"
 import { Pagination, PaginationItem } from "reactstrap"
 import { Link } from "gatsby"
+import { FaArrowRight, FaArrowLeft, FaUnlink } from "react-icons/fa"
 
 const PaginationLinks = ({ currentPage, numberOfPages }) => {
   const isFirst = currentPage === 1
@@ -22,7 +23,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
               }}
             >
               {" "}
-              First
+              <FaUnlink />
             </p>
           </PaginationItem>
         </div>
@@ -38,7 +39,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
                 }}
               >
                 {" "}
-                Previous
+                <FaArrowLeft />
               </p>
             </Link>
           </PaginationItem>
@@ -57,7 +58,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
             </PaginationItem>
           </div>
         ) : (
-          <div style={{ fontFamily: "Helvetica", marginLeft: "0 3px" }}>
+          <div style={{ fontFamily: "Helvetica", margin: "0 3px" }}>
             <PaginationItem key={`page-number${i + 1}`}>
               <Link to={`/${i === 0 ? "blog/1" : "blog/" + (i + 1)}`}>
                 <p style={{ fontFamily: "Helvetica", color: "black" }}>
@@ -81,7 +82,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
               }}
             >
               {" "}
-              End
+              <FaUnlink />
             </p>
           </PaginationItem>
         </div>
@@ -97,7 +98,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
                 }}
               >
                 {" "}
-                Next
+                <FaArrowRight />
               </p>
             </Link>
           </PaginationItem>
