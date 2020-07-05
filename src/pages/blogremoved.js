@@ -5,27 +5,6 @@ import classes from "./blog.module.scss"
 import Head from "../components/head"
 
 const BlogPage = () => {
-  //PART BELOW FOR FETCHING FROM MARKDOWN FILES
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allMarkdownRemark {
-  //       edges {
-  //         node {
-  //           frontmatter {
-  //             title
-  //             date
-  //           }
-  //           html
-  //           excerpt
-  //           fields {
-  //             slug
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
@@ -39,9 +18,6 @@ const BlogPage = () => {
       }
     }
   `)
-
-  // const { title, date } = data.allMarkdownRemark.edges.node.frontmatter
-  // console.log(data)
 
   return (
     <Layout>

@@ -19,27 +19,16 @@ const path = require("path")
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const blogTemplate = path.resolve("./src/templates/blog.js")
-  //the query below for the markdown
-  // const res = await graphql(`
-  //   query {
-  //     allMarkdownRemark {
-  //       edges {
-  //         node {
-  //           fields {
-  //             slug
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const blogsTemplate = path.resolve("./src/templates/blogs.js")
 
   const res = await graphql(`
     query {
-      allContentfulBlogPost {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
         edges {
           node {
+            title
             slug
+            publishedDate(formatString: "MMMM Do, YYYY")
           }
         }
       }
@@ -52,6 +41,28 @@ module.exports.createPages = async ({ graphql, actions }) => {
       path: `/blog/${edge.node.slug}`,
       context: {
         slug: edge.node.slug,
+      },
+    })
+  })
+
+  const posts = res.data.allContentfulBlogPost.edges
+  const postsPerPage = 10
+  const numberOfPages = Math.ceil(posts.length / postsPerPage)
+
+  Array.from({ length: numberOfPages }).forEach((_, index) => {
+    const isFirstPage = index === 0
+    const currentPage = index + 1
+
+    //if (isFirstPage) return
+
+    createPage({
+      component: blogsTemplate,
+      path: `/blog/${currentPage}`,
+      context: {
+        limit: postsPerPage,
+        skip: index * postsPerPage,
+        numberOfPages: numberOfPages,
+        currentPage: currentPage,
       },
     })
   })
