@@ -4,6 +4,8 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import classes from "./blog.module.scss"
 import Head from "../components/head"
 
+//Kept it incase of looking for a static page like that in the future
+
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
     query {
