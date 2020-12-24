@@ -13,7 +13,11 @@ const blogs = props => {
   return (
     <Layout>
       <Head title="Blog" />
-      <h1>My Blog</h1>
+      <h1>
+        My Blog
+        <br />
+        <br />
+      </h1>
       <ol className={classes.posts}>
         {data.map(d => {
           return (

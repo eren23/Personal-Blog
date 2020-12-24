@@ -15,7 +15,7 @@ const Footer = () => {
   const { author } = data.site.siteMetadata
   return (
     <footer className={classes.footer}>
-      <p>This site has created by {author} Copyright 2020</p>
+      <p>This blog has been created by {author} 2020</p>
     </footer>
   )
 }

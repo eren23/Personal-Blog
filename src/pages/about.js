@@ -7,11 +7,16 @@ const AboutPage = () => {
     <Layout>
       <Head title="About" /> <h1>About</h1>
       <p>
-        Hi, My name is Eren. I'm a Computer Engineer from Turkey. I'm working as
-        an R&D Engineer and Embedded Software Developer professionally but "I
-        hope" this blog will be more about modern web technologies and maybe
-        some hands-on applications. You can reach me by using my eMail address
-        or going to my website from the "Contact" page.
+        <br />
+        <br />
+        Hi, My name is Eren. I'm a Computer Engineer from Turkey. I'm a M. Sc.
+        student at Bielefeld University, I also worked as a Software Engineer
+        for 3 years before starting higher education. I like web technologies
+        and AI.
+        <br />
+        <br />
+        You can reach me by using my e-mail address or just by going to my
+        website from the "Contact" page.
       </p>
     </Layout>
   )

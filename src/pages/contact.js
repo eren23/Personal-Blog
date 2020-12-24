@@ -8,7 +8,11 @@ const ContactPage = () => {
     <Layout>
       <Head title="Contact" />
       <h1>Contact</h1>
-      <p>Send me an email at: "erenak1996@gmail.com" or...</p>
+      <p>
+        <br />
+        <br />
+        Send me an email at: "erenak1996@gmail.com" or...
+      </p>
       <a
         href="https://www.akbuluteren.com/"
         target="_blank"
@@ -16,8 +20,9 @@ const ContactPage = () => {
         style={{
           textDecoration: "none",
           color: "black",
-          fontSize: "2rem",
+          fontSize: "1rem",
           fontStyle: "italic",
+          textDecoration: "underline",
         }}
       >
         Go to my website

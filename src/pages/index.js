@@ -11,8 +11,12 @@ const indexPage = () => {
 
       <h1>Hello</h1>
       <p>
-        This blog was meant to teach me Gatsby but maybe in time I can write
-        down couple of things and teach some to others.
+        <br />
+        <br />
+        Welcome to my blog.
+        <br />
+        <br />
+        I'll, from time to time, publish stuff that I like here.
       </p>
     </Layout>
   )
